@@ -14,6 +14,4 @@ resource "linode_instance" "algo" {
 
   ssh_key       = "${var.ssh_key}"
   root_password = "random"
-
-  swap_size = 0
 }
