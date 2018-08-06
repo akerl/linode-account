@@ -12,5 +12,8 @@ resource "linode_instance" "algo" {
   region = "us-central"
   type   = "g6-standard-4"
 
-  ssh_key = "${var.ssh_key}"
+  ssh_key       = "${var.ssh_key}"
+  root_password = "random"
+
+  swap_size = 0
 }
