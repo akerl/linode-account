@@ -4,14 +4,22 @@ variable "ssh_key" {
   type = "string"
 }
 
-resource "linode_instance" "algo" {
-  label = "algo"
+output "green-algo-address" {
+  value = "${module.green-algo.address}"
+}
 
-  image  = "linode/ubuntu18.04"
-  kernel = "linode/direct-disk"
-  region = "us-central"
-  type   = "g6-standard-4"
+output "red-algo-address" {
+  value = "${module.red-algo.address}"
+}
 
-  ssh_key       = "${var.ssh_key}"
-  root_password = "random"
+module "green-algo" {
+  source  = "./modules/algo"
+  name    = "green"
+  ssh_key = "${var.ssh_key}"
+}
+
+module "red-algo" {
+  source  = "./modules/algo"
+  name    = "green"
+  ssh_key = "${var.ssh_key}"
 }
