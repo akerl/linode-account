@@ -20,6 +20,6 @@ module "green-algo" {
 
 module "red-algo" {
   source  = "./modules/algo"
-  name    = "green"
+  name    = "red"
   ssh_key = "${var.ssh_key}"
 }
