@@ -1,25 +1,21 @@
 provider "linode" {}
 
 variable "ssh_key" {
-  type = "string"
+  type    = "string"
+  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPrm9UdL04EOBdgpluugFsai+PMIqF2tNmVH757JHH3I"
 }
 
-output "green-algo-address" {
-  value = "${module.green-algo.address}"
+output "test-address" {
+  value = "${module.test.ip_address}"
 }
 
-output "red-algo-address" {
-  value = "${module.red-algo.address}"
-}
-
-module "green-algo" {
-  source  = "./modules/algo"
-  name    = "green"
+module "test" {
+  source  = "github.com/akerl/terraform-linode-algo"
+  name    = "test"
   ssh_key = "${var.ssh_key}"
-}
 
-module "red-algo" {
-  source  = "./modules/algo"
-  name    = "red"
-  ssh_key = "${var.ssh_key}"
+  users = [
+    "alfa",
+    "beta",
+  ]
 }
