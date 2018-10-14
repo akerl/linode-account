@@ -9,15 +9,16 @@ variable "ssh_keys" {
   ]
 }
 
-output "blue-algo-address" {
-  value = "${module.blue-algo.ip_address}"
+output "gold-algo-address" {
+  value = "${module.gold-algo.ip_address}"
 }
 
-module "blue-algo" {
+module "gold-algo" {
   source = "github.com/akerl/terraform-linode-algo"
 
-  name     = "blue"
+  name     = "gold"
   ssh_keys = "${var.ssh_keys}"
+  region   = "ap-south"
 
   users = [
     "alfa",
