@@ -11,5 +11,5 @@ data "template_file" "config" {
 resource "local_file" "output" {
   count    = "${length(var.vpns)}"
   content  = "${element(data.template_file.config.*.rendered, count.index)}"
-  filename = "${path.module}/../vpn_${element(keys(var.vpns), count.index)}.tf"
+  filename = "../vpn_${element(keys(var.vpns), count.index)}.tf"
 }
