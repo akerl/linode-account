@@ -9,7 +9,11 @@ install:
 - "./scripts/download_provider.sh linode $LINODE_CHECKSUM"
 - "~/tfbin/terraform init -upgrade -input=false"
 script:
+- cd meta && ~/tfbin/terraform fmt -write=false -diff=true -check
+- cd meta && ~/tfbin/terraform plan -detailed-exitcode -input=false
 - "~/tfbin/terraform fmt -write=false -diff=true -check"
 - "~/tfbin/terraform plan -detailed-exitcode -input=false"
 notifications:
   email: false
+  slack:
+    secure: ALmAuZQxd+jQH5W3zTugBTtMnXeLIh+YkAbuvTgnFwrBsghF38F9J1OatwG4fbF+R2QH+YeoP0rkAuGWmhCxPM1yBDXhehUi8Kwx7+DPJIIPJNH0CLrxkzgM77ysdisFJ6PciKm8DM/5e1KYc2xE5RkcKVJgvcMulElp+/p1vc8SrKRD02qaYqOInhfj2nDhhJdbnCawmC39lXo/RYEK/5XgsJQ28j94OmsPqUlhNog8C2s9pAR3BYc0txNc+UZZvt4pQc3eJXwB0D+mug4a8LjyIBhEwIR+2LW4qBcLTnAJzfSXG8mW1GsVWyqY1sP5IJMbngXnnczDRe8trmfwN4sBsOQ+nwD4XUKTLWmPH9QVC1ZBV/n4FioZVJpQ+lL6tkoGInAT0sPIKVO0bV7osEXolRN5OdcDhaXJyMq33SPP3JWnVMLSzGrh4nvGcFZMxNLh3FFfCD7nSSuWQQgcrwHv4YlQG+liH4CR7v/8+hpDAvoialDMRVowrqeVBbDKDfgeE8wFM0kioLOGLr/svkqZTrcWKQpBkv6PME22a55j0hVZtEzuli2j/Q47wKiHIAmO1X5ZlwGiqvqINUO5MyC47ALgJaXgJlaanbjA4O65MAOd/lmpYteINBZ2LH0YTCRqxDnx4iqdymhTJb04rjaLSSCtnmZzcXQSWz6xevw=
