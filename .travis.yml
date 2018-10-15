@@ -8,10 +8,10 @@ install:
 - "./scripts/download_terraform.sh $TERRAFORM_VERSION"
 - "./scripts/download_provider.sh linode $LINODE_CHECKSUM"
 - "~/tfbin/terraform init -upgrade -input=false"
-- cd meta && ~/tfbin/terraform init -upgrade -input=false
+- pushd meta && ~/tfbin/terraform init -upgrade -input=false && popd
 script:
-- cd meta && ~/tfbin/terraform fmt -write=false -diff=true -check
-- cd meta && ~/tfbin/terraform plan -detailed-exitcode -input=false
+- pushd meta && ~/tfbin/terraform fmt -write=false -diff=true -check && popd
+- pushd meta && ~/tfbin/terraform plan -detailed-exitcode -input=false && popd
 - "~/tfbin/terraform fmt -write=false -diff=true -check"
 - "~/tfbin/terraform plan -detailed-exitcode -input=false"
 notifications:
