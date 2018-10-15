@@ -1,0 +1,15 @@
+dist: trusty
+env:
+  global:
+  - TFBIN_DIR=$HOME/tfbin
+  - TERRAFORM_VERSION=0.11.8
+  - LINODE_CHECKSUM=96e14706c4ba05eda668042422a15d21bc9531e85d8f9fed24f7daad563d3a72
+install:
+- "./scripts/download_terraform.sh $TERRAFORM_VERSION"
+- "./scripts/download_provider.sh linode $LINODE_CHECKSUM"
+- "~/tfbin/terraform init -upgrade -input=false"
+script:
+- "~/tfbin/terraform fmt -write=false -diff=true -check"
+- "~/tfbin/terraform plan -detailed-exitcode -input=false"
+notifications:
+  email: false

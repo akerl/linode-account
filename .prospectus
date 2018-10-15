@@ -1,0 +1,41 @@
+Prospectus.extra_dep('file', 'prospectus_travis')
+
+item do
+  noop
+
+  extend ProspectusTravis::Build.new('akerl/servers')
+
+  deps do
+    item do
+      name 'terraform'
+
+      expected do
+        github_release
+        repo 'hashicorp/terraform'
+        regex /v?([\d.]+)/
+      end
+
+      actual do
+        grep
+        file '.travis.yml'
+        regex /^\s+- TERRAFORM_VERSION=([\d.]+)$/
+      end
+    end
+
+    item do
+      name 'linode-provider'
+
+      expected do
+        github_release
+        repo 'akerl/terraform-provider-linode'
+        regex /^([\d.]+)$/
+      end
+
+      actual do
+        static
+        linode_provider = `terraform providers`.lines.grep(/provider.linode [\d.]+\n$/)
+        set linode_provider.first.split.last
+      end
+    end
+  end
+end

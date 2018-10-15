@@ -1,4 +1,6 @@
-provider "linode" {}
+provider "linode" {
+  version = "0.2.7"
+}
 
 data "external" "ssh_key" {
   program = ["./assets/get_ssh_key.sh"]
