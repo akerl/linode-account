@@ -1,8 +1,7 @@
 vpns = {
-  red   = "alfa,beta"
-  green = "alfa,beta"
+  // name = "list,of,users"
 }
 
 regions = {
-  green = "ap-south"
+  // name = "region"
 }

@@ -1,3 +1,7 @@
+output "${name}-algo-address" {
+  value = "$${module.${name}-algo.ip_address}"
+}
+
 module "${name}-algo" {
   source = "github.com/akerl/terraform-linode-algo"
 
