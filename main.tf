@@ -1,5 +1,5 @@
 provider "linode" {
-  version = "0.2.7"
+  version = "0.2.8"
 }
 
 data "external" "ssh_key" {
