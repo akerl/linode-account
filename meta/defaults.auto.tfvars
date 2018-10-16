@@ -5,5 +5,4 @@ vpns = {
 
 regions = {
   green = "ap-south"
-  red   = "us-east"
 }
