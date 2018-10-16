@@ -3,6 +3,8 @@ vpns = [
 ]
 
 regions = {
+  orange = "ap-south"
+
   // vpn_name = "region"
 }
 
