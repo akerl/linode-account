@@ -3,14 +3,15 @@ data "template_file" "config" {
   count    = "${length(var.vpns)}"
 
   vars {
-    name     = "${element(keys(var.vpns), count.index)}"
-    userlist = "\"${replace(element(values(var.vpns), count.index), ",", "\", \"")}\""
-    region   = "${lookup(var.regions, element(keys(var.vpns), count.index), var.default_region)}"
+    name = "${var.vpns[count.index]}"
+
+    userlist = "\"${replace(lookup(var.users, var.vpns[count.index], var.default_users), ",", "\", \"")}\""
+    region   = "${lookup(var.regions, var.vpns[count.index], var.default_region)}"
   }
 }
 
 resource "local_file" "output" {
   count    = "${length(var.vpns)}"
-  content  = "${element(data.template_file.config.*.rendered, count.index)}"
-  filename = "../vpn_${element(keys(var.vpns), count.index)}.tf"
+  content  = "${data.template_file.config.*.rendered[count.index]}"
+  filename = "../vpn_${var.vpns[count.index]}.tf"
 }

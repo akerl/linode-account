@@ -1,7 +1,11 @@
-vpns = {
-  // name = "list,of,users"
-}
+vpns = [
+  "orange",
+]
 
 regions = {
-  // name = "region"
+  // vpn_name = "region"
+}
+
+users = {
+  // vpn_name = "user,list,here"
 }

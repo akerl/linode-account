@@ -1,6 +1,6 @@
 variable "vpns" {
   description = "What VPNs to create"
-  type        = "map"
+  type        = "list"
 }
 
 variable "default_region" {
@@ -10,7 +10,19 @@ variable "default_region" {
 }
 
 variable "regions" {
-  description = "Where to create a VPN"
+  description = "Region overrides for specific VPNs"
+  type        = "map"
+  default     = {}
+}
+
+variable "default_users" {
+  description = "Default user list for VPNs"
+  type        = "string"
+  default     = "alfa,beta"
+}
+
+variable "users" {
+  description = "User list overrides for specific VPNs"
   type        = "map"
   default     = {}
 }
