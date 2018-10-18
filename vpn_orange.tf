@@ -9,5 +9,5 @@ module "orange-algo" {
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
   region   = "ap-south"
   image_id = "${module.image.image_id}"
-  users = ["alfa", "beta"]
+  users    = ["alfa", "beta"]
 }
