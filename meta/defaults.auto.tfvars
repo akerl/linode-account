@@ -1,13 +1,13 @@
 vpns = [
-  "orange",
+  "green",
 ]
 
 regions = {
-  orange = "ap-south"
-
   // vpn_name = "region"
 }
 
 users = {
+  green = "alfa,bravo,charlie"
+
   // vpn_name = "user,list,here"
 }
