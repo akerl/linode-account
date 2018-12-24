@@ -1,13 +1,13 @@
-output "orange-algo-address" {
-  value = "${module.orange-algo.ip_address}"
+output "cyan-algo-address" {
+  value = "${module.cyan-algo.ip_address}"
 }
 
-module "orange-algo" {
+module "cyan-algo" {
   source = "github.com/akerl/terraform-linode-algo"
 
-  name     = "orange"
+  name     = "cyan"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
   region   = "us-east"
   image_id = "${module.image.image_id}"
-  users    = ["alfa", "beta"]
+  users    = ["left", "right", "up", "down"]
 }
