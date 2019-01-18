@@ -15,7 +15,7 @@ curl -o /home/akerl/.ssh/authorized_keys https://id-ed25519.pub/groups/strong.tx
 chown akerl:akerl /home/akerl/.ssh/authorized_keys
 
 # Docker setup
-pacman -S docker
+pacman -S --noconfirm --needed docker
 systemctl enable docker
 
 # Repo setup
