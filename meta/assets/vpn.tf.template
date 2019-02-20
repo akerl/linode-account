@@ -10,4 +10,5 @@ module "${name}-algo" {
   region   = "${region}"
   image_id = "$${module.image.image_id}"
   users    = [${userlist}]
+  type     = "g6-standard-1"
 }
