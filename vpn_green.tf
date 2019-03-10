@@ -3,8 +3,8 @@ output "green-algo-address" {
 }
 
 module "green-algo" {
-  source = "github.com/akerl/terraform-linode-algo"
-
+  source   = "armorfret/algo/linode"
+  version  = "0.0.1"
   name     = "green"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
   region   = "ap-south"

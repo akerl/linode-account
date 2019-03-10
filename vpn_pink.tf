@@ -3,8 +3,8 @@ output "pink-algo-address" {
 }
 
 module "pink-algo" {
-  source = "github.com/akerl/terraform-linode-algo"
-
+  source   = "armorfret/algo/linode"
+  version  = "0.0.1"
   name     = "pink"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
   region   = "eu-west"

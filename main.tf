@@ -23,6 +23,7 @@ data "external" "ssh_key" {
 }
 
 module "image" {
-  source   = "github.com/akerl/terraform-linode-algo-image"
+  source   = "armorfret/algo-image/linode"
+  version  = "0.0.1"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
 }
