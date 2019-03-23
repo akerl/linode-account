@@ -7,7 +7,7 @@ provider "template" {
 }
 
 provider "random" {
-  version = "2.0.0"
+  version = "2.1.0"
 }
 
 provider "null" {
@@ -15,7 +15,7 @@ provider "null" {
 }
 
 provider "external" {
-  version = "1.0.0"
+  version = "1.1.0"
 }
 
 data "external" "ssh_key" {
