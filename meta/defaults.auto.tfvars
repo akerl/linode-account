@@ -1,7 +1,7 @@
 vpns = [
-  "red",
-  "green",
-  "pink",
+  "orange",
+  "blue",
+  "brown",
 ]
 
 regions = {
