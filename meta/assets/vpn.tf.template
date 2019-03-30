@@ -1,10 +1,10 @@
-output "${name}-algo-address" {
-  value = "$${module.${name}-algo.ip_address}"
+output "${name}-vpn-address" {
+  value = "$${module.${name}-vpn.ip_address}"
 }
 
-module "${name}-algo" {
-  source   = "armorfret/algo/linode"
-  version  = "0.0.1"
+module "${name}-vpn" {
+  source   = "armorfret/wireguard/linode"
+  version  = "0.0.3"
   name     = "${name}"
   ssh_keys = ["$${data.external.ssh_key.result.public_key}"]
   region   = "${region}"

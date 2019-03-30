@@ -1,11 +1,11 @@
-output "brown-algo-address" {
-  value = "${module.brown-algo.ip_address}"
+output "gray-vpn-address" {
+  value = "${module.gray-vpn.ip_address}"
 }
 
-module "brown-algo" {
-  source   = "armorfret/algo/linode"
-  version  = "0.0.1"
-  name     = "brown"
+module "gray-vpn" {
+  source   = "armorfret/wireguard/linode"
+  version  = "0.0.3"
+  name     = "gray"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
   region   = "eu-west"
   image_id = "${module.image.image_id}"

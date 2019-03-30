@@ -23,7 +23,7 @@ data "external" "ssh_key" {
 }
 
 module "image" {
-  source   = "armorfret/algo-image/linode"
-  version  = "0.0.1"
+  source   = "armorfret/wireguard-image/linode"
+  version  = "0.0.4"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
 }
