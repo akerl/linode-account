@@ -4,11 +4,11 @@ output "gray-vpn-address" {
 
 module "gray-vpn" {
   source   = "armorfret/wireguard/linode"
-  version  = "0.0.3"
+  version  = "0.0.4"
   name     = "gray"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
   region   = "eu-west"
-  image_id = "${module.image.image_id}"
+  image_id = "private/5990925"
   users    = ["left", "right", "up", "down"]
   type     = "g6-standard-1"
 }

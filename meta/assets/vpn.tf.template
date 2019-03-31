@@ -4,11 +4,11 @@ output "${name}-vpn-address" {
 
 module "${name}-vpn" {
   source   = "armorfret/wireguard/linode"
-  version  = "0.0.3"
+  version  = "0.0.4"
   name     = "${name}"
   ssh_keys = ["$${data.external.ssh_key.result.public_key}"]
   region   = "${region}"
-  image_id = "$${module.image.image_id}"
+  image_id = "${image_id}"
   users    = [${userlist}]
   type     = "g6-standard-1"
 }

@@ -7,6 +7,7 @@ data "template_file" "config" {
 
     userlist = "\"${replace(lookup(var.users, var.vpns[count.index], var.default_users), ",", "\", \"")}\""
     region   = "${lookup(var.regions, var.vpns[count.index], var.default_region)}"
+    image_id = "private/5990925"
   }
 }
 

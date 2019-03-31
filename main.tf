@@ -21,9 +21,3 @@ provider "external" {
 data "external" "ssh_key" {
   program = ["./assets/get_ssh_key.sh"]
 }
-
-module "image" {
-  source   = "armorfret/wireguard-image/linode"
-  version  = "0.0.4"
-  ssh_keys = ["${data.external.ssh_key.result.public_key}"]
-}
