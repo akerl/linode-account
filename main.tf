@@ -17,7 +17,3 @@ provider "null" {
 provider "external" {
   version = "1.1.0"
 }
-
-data "external" "ssh_key" {
-  program = ["./assets/get_ssh_key.sh"]
-}

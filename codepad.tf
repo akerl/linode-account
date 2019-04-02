@@ -9,10 +9,10 @@ resource "linode_instance" "codepad" {
   type   = "g6-standard-4"
 
   disk {
-    label           = "root"
-    size            = 102400
-    authorized_keys = ["${data.external.ssh_key.result.public_key}"]
-    image           = "linode/arch"
+    label            = "root"
+    size             = 102400
+    authorized_users = ["${data.linode_profile.profile.username}"]
+    image            = "linode/arch"
   }
 
   config {

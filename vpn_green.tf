@@ -4,9 +4,9 @@ output "green-vpn-address" {
 
 module "green-vpn" {
   source   = "armorfret/wireguard/linode"
-  version  = "0.0.4"
+  version  = "0.0.6"
   name     = "green"
-  ssh_keys = ["${data.external.ssh_key.result.public_key}"]
+  ssh_users = ["${data.linode_profile.profile.username}"]
   region   = "ap-south"
   image_id = "private/6003431"
   users    = ["left", "right", "up", "down"]

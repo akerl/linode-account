@@ -4,9 +4,9 @@ output "red-vpn-address" {
 
 module "red-vpn" {
   source   = "armorfret/wireguard/linode"
-  version  = "0.0.4"
+  version  = "0.0.6"
   name     = "red"
-  ssh_keys = ["${data.external.ssh_key.result.public_key}"]
+  ssh_users = ["${data.linode_profile.profile.username}"]
   region   = "us-east"
   image_id = "private/6003431"
   users    = ["left", "right", "up", "down"]
