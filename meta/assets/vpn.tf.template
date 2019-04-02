@@ -4,9 +4,9 @@ output "${name}-vpn-address" {
 
 module "${name}-vpn" {
   source   = "armorfret/wireguard/linode"
-  version  = "0.0.6"
+  version  = "0.0.8"
   name     = "${name}"
-  ssh_users = ["$${data.linode_profile.profile.username}"]
+  ssh_keys = ["$${values(data.external.ssh_keys.result)}"]
   region   = "${region}"
   image_id = "${image_id}"
   users    = [${userlist}]
