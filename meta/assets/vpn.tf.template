@@ -4,7 +4,7 @@ output "${name}-vpn-address" {
 
 module "${name}-vpn" {
   source   = "armorfret/wireguard/linode"
-  version  = "0.0.8"
+  version  = "${version}"
   name     = "${name}"
   ssh_keys = ["$${values(data.external.ssh_keys.result)}"]
   region   = "${region}"

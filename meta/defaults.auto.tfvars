@@ -1,8 +1,4 @@
-vpns = [
-  "gray",
-  "orange",
-  "blue",
-]
+vpns = []
 
 regions = {
   red    = "us-east"

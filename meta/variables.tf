@@ -32,3 +32,9 @@ variable "image_id" {
   type        = "string"
   default     = "private/6005216"
 }
+
+variable "version" {
+  description = "Version of the wireguard module to use"
+  type        = "string"
+  default     = "0.0.9"
+}
