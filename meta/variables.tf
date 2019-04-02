@@ -30,5 +30,5 @@ variable "users" {
 variable "image_id" {
   description = "Image ID to base VPN VMs on"
   type        = "string"
-  default     = "private/6003431"
+  default     = "private/6005216"
 }
