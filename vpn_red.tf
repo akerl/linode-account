@@ -1,14 +1,14 @@
-output "gray-vpn-address" {
-  value = "${module.gray-vpn.ip_address}"
+output "red-vpn-address" {
+  value = "${module.red-vpn.ip_address}"
 }
 
-module "gray-vpn" {
+module "red-vpn" {
   source   = "armorfret/wireguard/linode"
   version  = "0.0.4"
-  name     = "gray"
+  name     = "red"
   ssh_keys = ["${data.external.ssh_key.result.public_key}"]
-  region   = "eu-west"
-  image_id = "private/5990925"
+  region   = "us-east"
+  image_id = "private/6003431"
   users    = ["left", "right", "up", "down"]
   type     = "g6-standard-1"
 }
