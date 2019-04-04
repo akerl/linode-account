@@ -12,3 +12,10 @@ module "${name}-vpn" {
   users    = [${userlist}]
   type     = "g6-standard-1"
 }
+
+resource "linode_domain_record" "${name}" {
+    domain_id = "$${linode_domain.wg.id}"
+    name = "${name}"
+    record_type = "A"
+    target = "$${module.${name}-vpn.ip_address}"
+}
