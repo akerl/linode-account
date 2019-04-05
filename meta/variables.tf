@@ -30,11 +30,9 @@ variable "users" {
 variable "image_id" {
   description = "Image ID to base VPN VMs on"
   type        = "string"
-  default     = "private/6005216"
 }
 
 variable "version" {
   description = "Version of the wireguard module to use"
   type        = "string"
-  default     = "0.0.9"
 }

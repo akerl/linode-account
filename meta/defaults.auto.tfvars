@@ -1,4 +1,10 @@
-vpns = []
+image_id = "linode/ubuntu18.04"
+
+version = "0.0.10"
+
+vpns = [
+  "red",
+]
 
 regions = {
   red    = "us-east"

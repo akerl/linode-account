@@ -10,6 +10,7 @@ module "${name}-vpn" {
   region   = "${region}"
   image_id = "${image_id}"
   users    = [${userlist}]
+  ansible_repo_path = "$${path.root}/ansible"
   type     = "g6-standard-1"
 }
 
