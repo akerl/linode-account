@@ -1,9 +1,11 @@
-image_id = "linode/ubuntu18.04"
+image_id = "private/6022036"
 
 version = "0.0.10"
 
 vpns = [
   "red",
+  "green",
+  "pink",
 ]
 
 regions = {

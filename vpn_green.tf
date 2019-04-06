@@ -1,22 +1,22 @@
-output "red-vpn-address" {
-  value = "${module.red-vpn.ip_address}"
+output "green-vpn-address" {
+  value = "${module.green-vpn.ip_address}"
 }
 
-module "red-vpn" {
+module "green-vpn" {
   source   = "armorfret/wireguard/linode"
   version  = "0.0.10"
-  name     = "red"
+  name     = "green"
   ssh_keys = ["${values(data.external.ssh_keys.result)}"]
-  region   = "us-east"
+  region   = "ap-south"
   image_id = "private/6022036"
   users    = ["left", "right", "up", "down"]
   ansible_repo_path = "${path.root}/ansible"
   type     = "g6-standard-1"
 }
 
-resource "linode_domain_record" "red" {
+resource "linode_domain_record" "green" {
     domain_id = "${linode_domain.wg.id}"
-    name = "red"
+    name = "green"
     record_type = "A"
-    target = "${module.red-vpn.ip_address}"
+    target = "${module.green-vpn.ip_address}"
 }
