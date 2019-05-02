@@ -3,9 +3,9 @@ image_id = "private/6022036"
 version = "0.0.10"
 
 vpns = [
-  "red",
-  "green",
-  "pink",
+  "orange",
+  "blue",
+  "gray",
 ]
 
 regions = {
@@ -25,17 +25,17 @@ regions = {
 }
 
 users = {
-  red    = "left,right,up,down"
-  orange = "left,right,up,down"
-  yellow = "left,right,up,down"
-  green  = "left,right,up,down"
-  blue   = "left,right,up,down"
-  purple = "left,right,up,down"
-  pink   = "left,right,up,down"
-  brown  = "left,right,up,down"
-  gray   = "left,right,up,down"
-  black  = "left,right,up,down"
-  white  = "left,right,up,down"
+  red    = "szeth,lift,jasnah,kaladin"
+  orange = "szeth,lift,jasnah,kaladin"
+  yellow = "szeth,lift,jasnah,kaladin"
+  green  = "szeth,lift,jasnah,kaladin"
+  blue   = "szeth,lift,jasnah,kaladin"
+  purple = "szeth,lift,jasnah,kaladin"
+  pink   = "szeth,lift,jasnah,kaladin"
+  brown  = "szeth,lift,jasnah,kaladin"
+  gray   = "szeth,lift,jasnah,kaladin"
+  black  = "szeth,lift,jasnah,kaladin"
+  white  = "szeth,lift,jasnah,kaladin"
 
   // vpn_name = "user,list,here"
 }
