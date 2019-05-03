@@ -1,9 +1,7 @@
-image_id = "private/6022036"
-
-version = "0.0.10"
+version = "0.0.13"
 
 vpns = [
-  "orange",
+  "red",
   "blue",
   "gray",
 ]

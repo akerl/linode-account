@@ -17,3 +17,5 @@ provider "null" {
 provider "external" {
   version = "1.1.1"
 }
+
+data "linode_profile" "profile" {}

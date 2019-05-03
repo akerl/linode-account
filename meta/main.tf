@@ -4,9 +4,8 @@ data "template_file" "config" {
 
   vars {
     name     = "${var.vpns[count.index]}"
-    userlist = "\"${replace(lookup(var.users, var.vpns[count.index], var.default_users), ",", "\", \"")}\""
-    region   = "${lookup(var.regions, var.vpns[count.index], var.default_region)}"
-    image_id = "${var.image_id}"
+    userlist = "${replace(lookup(var.users, var.vpns[count.index]), ",", "\", \"")}"
+    region   = "${lookup(var.regions, var.vpns[count.index])}"
     version  = "${var.version}"
   }
 }
