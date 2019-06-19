@@ -1,8 +1,8 @@
 wireguard_version = "0.0.13"
 
 vpns = [
-  "red",
-  "blue",
+  "orange",
+  "purple",
   "gray",
 ]
 
