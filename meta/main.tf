@@ -2,11 +2,11 @@ data "template_file" "config" {
   template = "${file("${path.module}/assets/vpn.tf.template")}"
   count    = "${length(var.vpns)}"
 
-  vars {
+  vars = {
     name     = "${var.vpns[count.index]}"
     userlist = "${replace(lookup(var.users, var.vpns[count.index]), ",", "\", \"")}"
     region   = "${lookup(var.regions, var.vpns[count.index])}"
-    version  = "${var.version}"
+    version  = "${var.wireguard_version}"
   }
 }
 

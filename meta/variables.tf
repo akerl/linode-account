@@ -15,7 +15,7 @@ variable "users" {
   default     = {}
 }
 
-variable "version" {
+variable "wireguard_version" {
   description = "Version of the wireguard module to use"
   type        = "string"
 }

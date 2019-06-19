@@ -1,4 +1,4 @@
-version = "0.0.13"
+wireguard_version = "0.0.13"
 
 vpns = [
   "red",
