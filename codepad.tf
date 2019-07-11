@@ -20,7 +20,7 @@ resource "linode_instance" "codepad" {
     kernel = "linode/grub2"
 
     devices {
-      sda = {
+      sda {
         disk_label = "root"
       }
     }

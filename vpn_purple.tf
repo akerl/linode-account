@@ -4,7 +4,7 @@ output "purple-vpn-address" {
 
 module "purple-vpn" {
   source         = "armorfret/wireguard/linode"
-  version        = "0.0.13"
+  version        = "0.1.0"
   name           = "purple"
   ssh_keys       = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGJ8nnGTRnVJR6Sz6lnYdRchw2Z4S9DFOKTHuJBnMYBS"]
   region         = "ap-south"
