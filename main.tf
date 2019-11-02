@@ -1,5 +1,5 @@
 provider "linode" {
-  version = "1.7.0"
+  version = "1.8.0"
 }
 
 provider "template" {
@@ -7,7 +7,7 @@ provider "template" {
 }
 
 provider "random" {
-  version = "2.1.2"
+  version = "2.2.1"
 }
 
 provider "null" {
