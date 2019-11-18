@@ -10,7 +10,7 @@ resource "linode_instance" "codepad" {
 
   disk {
     label            = "root"
-    size             = 102400
+    size             = 61440
     authorized_users = ["${data.linode_profile.profile.username}"]
     image            = "linode/arch"
   }

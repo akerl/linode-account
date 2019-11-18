@@ -1,9 +1,8 @@
-wireguard_version = "0.1.0"
+wireguard_version = "0.2.0"
 
 vpns = [
-  "red",
-  "green",
-  "pink",
+  "orange",
+  "gray",
 ]
 
 regions = {
