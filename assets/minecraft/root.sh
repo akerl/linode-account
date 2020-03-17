@@ -13,7 +13,7 @@ systemctl enable docker
 ## Minecraft setup
 mkdir -p /opt/minecraft/data
 
-cat <<EOF > /opt/minecraft/data/server.properties
+cat <<'EOF' > /opt/minecraft/data/server.properties
 enable-rcon=true
 enforce-whitelist=false
 max-players=100
@@ -23,7 +23,7 @@ rcon.password=minecraft
 white-list=true
 EOF
 
-cat <<EOF > /opt/minecraft/data/ops.json
+cat <<'EOF' > /opt/minecraft/data/ops.json
 [
   {
     "uuid": "fc40b0f2-3298-499e-84e6-9e6b22aaeec2",
@@ -34,7 +34,7 @@ cat <<EOF > /opt/minecraft/data/ops.json
 ]
 EOF
 
-cat <<EOF > /etc/systemd/system/minecraft.service
+cat <<'EOF' > /etc/systemd/system/minecraft.service
 [Unit]
 Description=Minecraft container
 After=docker.service
@@ -55,12 +55,14 @@ systemctl enable minecraft.service
 ## Backup setup
 mkdir -p /opt/minecraft/backups
 
-cat <<EOF > /usr/local/bin/minecraft_backup.sh
+cat <<'EOF' > /usr/local/bin/minecraft_backup.sh
 #!/usr/bin/env bash
 
 set -euo pipefail
 
-alias rcon="docker exec minecraft rcon-cli"
+function rcon {
+    docker exec minecraft rcon-cli $@
+}
 
 function cleanup {
     rcon save-on
@@ -70,13 +72,13 @@ trap cleanup EXIT
 rcon save-off
 rcon save-all
 sleep 10
-tar czvf /opt/minecraft/backups/world-$$(date "+%Y%m%d-%H%M%S").tar.gz /opt/minecraft/data/world
+tar czvf /opt/minecraft/backups/world-$(date "+%Y%m%d-%H%M%S").tar.gz /opt/minecraft/data/world
 cleanup
 EOF
 
 chmod a+x /usr/local/bin/minecraft_backup.sh
 
-cat <<EOF > /etc/systemd/system/backup.service
+cat <<'EOF' > /etc/systemd/system/backup.service
 [Unit]
 Description=Backup for Minecraft
 
@@ -85,7 +87,7 @@ Type=oneshot
 ExecStart=/usr/local/bin/minecraft_backup.sh
 EOF
 
-cat <<EOF > /etc/systemd/system/backup.timer
+cat <<'EOF' > /etc/systemd/system/backup.timer
 [Unit]
 Description=Run backup once per hour
 
