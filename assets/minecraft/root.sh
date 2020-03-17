@@ -14,10 +14,12 @@ systemctl enable docker
 mkdir -p /opt/minecraft/data
 
 cat <<EOF > /opt/minecraft/data/server.properties
+enable-rcon=true
 enforce-whitelist=false
 max-players=100
 motd=Welcome to the virtual standup. Do you have any block-ers?
 op-permission-level=4
+rcon.password=minecraft
 white-list=true
 EOF
 
