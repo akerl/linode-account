@@ -69,7 +69,7 @@ trap cleanup EXIT
 
 rcon save-off
 rcon save-all
-sleep 30
+sleep 10
 tar czvf /opt/minecraft/backups/world-$$(date "+%Y%m%d-%H%M%S").tar.gz /opt/minecraft/data/world
 cleanup
 EOF
