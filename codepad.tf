@@ -1,3 +1,5 @@
+data "linode_profile" "profile" {}
+
 output "codepad_address" {
   value = linode_instance.codepad.ip_address
 }

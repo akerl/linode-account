@@ -38,4 +38,3 @@ provider "null" {
 provider "external" {
 }
 
-data "linode_profile" "profile" {}
