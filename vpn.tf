@@ -6,9 +6,8 @@ module "vpns" {
   for_each = var.vpns
 
   source         = "armorfret/wireguard/linode"
-  version        = "0.3.1"
+  version        = "0.4.1"
   name           = each.key
-  ssh_keys       = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGJ8nnGTRnVJR6Sz6lnYdRchw2Z4S9DFOKTHuJBnMYBS"]
   region         = lookup(var.regions, each.key, var.default_region)
   stackscript_id = module.stackscript.stackscript_id
   image_id       = var.image_id
@@ -33,6 +32,6 @@ resource "linode_domain" "wg" {
 
 module "stackscript" {
   source    = "armorfret/wireguard-stackscript/linode"
-  version   = "0.3.0"
+  version   = "0.4.0"
   image_ids = [var.image_id]
 }
