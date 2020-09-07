@@ -1,9 +1,9 @@
-output "graph_address" {
-  value = linode_instance.graph.ip_address
+output "pumidor_address" {
+  value = linode_instance.pumidor.ip_address
 }
 
-resource "linode_instance" "graph" {
-  label = "graph"
+resource "linode_instance" "pumidor" {
+  label = "pumidor"
 
   region = "us-east"
   type   = "g6-standard-2"
