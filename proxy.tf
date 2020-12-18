@@ -1,18 +1,18 @@
-output "pumidor_address" {
-  value = linode_instance.pumidor.ip_address
+output "proxy_address" {
+  value = linode_instance.proxy.ip_address
 }
 
-resource "linode_instance" "pumidor" {
-  label = "pumidor"
+resource "linode_instance" "proxy" {
+  label = "proxy"
 
   region = "us-east"
-  type   = "g6-standard-2"
+  type   = "g6-standard-1"
 
   disk {
     label            = "root"
-    size             = 20480
+    size             = 10240
     authorized_users = [data.linode_profile.profile.username]
-    image            = "linode/arch"
+    image            = "linode/ubuntu20.10"
   }
 
   config {
