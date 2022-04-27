@@ -12,7 +12,7 @@ resource "linode_instance" "dmz" {
     label            = "root"
     size             = 20480
     authorized_users = [data.linode_profile.profile.username]
-    image            = "linode/archlinux"
+    image            = "linode/arch"
   }
 
   config {
