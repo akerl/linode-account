@@ -1,5 +1,5 @@
 vpns = [
-  "orange",
+  "red",
 ]
 
 default_region = "us-east"
