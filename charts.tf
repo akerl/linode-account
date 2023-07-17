@@ -1,16 +1,16 @@
-output "codepad_address" {
-  value = linode_instance.codepad.ip_address
+output "charts_address" {
+  value = linode_instance.charts.ip_address
 }
 
-resource "linode_instance" "codepad" {
-  label = "codepad"
+resource "linode_instance" "charts" {
+  label = "charts"
 
   region = "us-east"
-  type   = "g6-standard-2"
+  type   = "g6-nanode-1"
 
   disk {
     label            = "root"
-    size             = 61440
+    size             = 20480
     authorized_users = [data.linode_profile.profile.username]
     image            = "linode/arch"
   }

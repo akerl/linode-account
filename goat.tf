@@ -6,11 +6,11 @@ resource "linode_instance" "goat" {
   label = "goat"
 
   region = "us-east"
-  type   = "g6-standard-1"
+  type   = "g6-nanode-1"
 
   disk {
     label            = "root"
-    size             = 40960
+    size             = 25600
     authorized_users = [data.linode_profile.profile.username]
     image            = "linode/arch"
   }
