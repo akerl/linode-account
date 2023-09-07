@@ -2,7 +2,7 @@ terraform {
   required_providers {
     linode = {
       source  = "linode/linode"
-      version = "2.5.2"
+      version = "2.7.1"
     }
   }
 }
@@ -17,7 +17,7 @@ resource "linode_instance" "instances" {
   for_each = var.instances
 
   label  = each.key
-  region = "us-east"
+  region = "us-iad"
   type   = each.value.instance_type
 }
 
@@ -40,10 +40,9 @@ resource "linode_instance_config" "instances" {
   kernel      = "linode/grub2"
   booted      = true
 
-  devices {
-    sda {
-      disk_id = linode_instance_disk.instances[each.key].id
-    }
+  device {
+    device_name = "sda"
+    disk_id     = linode_instance_disk.instances[each.key].id
   }
 
   helpers {
