@@ -17,7 +17,7 @@ resource "linode_instance" "instances" {
   for_each = var.instances
 
   label  = each.key
-  region = "us-iad"
+  region = each.value.region
   type   = each.value.instance_type
 }
 
