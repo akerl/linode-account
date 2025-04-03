@@ -35,10 +35,5 @@ variable "instances" {
       disk_size     = 20480
       region        = "us-east"
     },
-    k8s = {
-      instance_type = "g6-standard-4"
-      disk_size     = 61440
-      region        = "us-east"
-    },
   }
 }
