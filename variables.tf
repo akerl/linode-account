@@ -16,7 +16,7 @@ variable "instances" {
       region        = "us-iad"
     },
     dmz = {
-      instance_type = "g6-standard-1"
+      instance_type = "g6-nanode-1"
       disk_size     = 20480
       region        = "us-iad"
     },
@@ -29,6 +29,11 @@ variable "instances" {
       instance_type = "g6-nanode-1"
       disk_size     = 20480
       region        = "us-east"
+    },
+    ghbots = {
+      instance_type = "g6-nanode-1"
+      disk_size     = 20480
+      region        = "us-iad"
     },
   }
 }
