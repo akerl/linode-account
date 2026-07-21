@@ -36,7 +36,7 @@ variable "instances" {
       region        = "us-iad"
     },
     fleet = {
-      instance_type = "g6-nanode-1"
+      instance_type = "g6-standard-1"
       disk_size     = 20480
       region        = "us-iad"
     },
