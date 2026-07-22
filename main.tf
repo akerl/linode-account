@@ -55,7 +55,7 @@ resource "linode_instance_config" "instances" {
 }
 
 resource "linode_rdns" "foo" {
-  for_each = var.instances
+  for_each = { for k, v in var.instances : k => v if !v.skip_rdns }
 
   address = linode_instance.instances[each.key].ip_address
   rdns    = "${each.key}.${var.domain}"

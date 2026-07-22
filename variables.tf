@@ -8,6 +8,7 @@ variable "instances" {
     instance_type = string
     disk_size     = number
     region        = string
+    skip_rdns     = optional(bool, false)
   }))
   default = {
     charts = {
@@ -35,10 +36,11 @@ variable "instances" {
       disk_size     = 20480
       region        = "us-iad"
     },
-    fleet = {
+    fleetproxy = {
       instance_type = "g6-nanode-1"
       disk_size     = 20480
       region        = "us-iad"
+      skip_rdns     = true
     },
   }
 }
